@@ -49,7 +49,8 @@ async function getDirectoryStructure(directoryPath) {
         item !== "website" &&
         item !== ".git" &&
         item !== "GETTING_STARTED.md" &&
-        item !== "README.md"
+        (directoryPath !== "" || item !== "README.md") && // Only exclude README.md at root level
+        item !== ".github"
       ) {
         if (stats.isDirectory()) {
           structure.push({
