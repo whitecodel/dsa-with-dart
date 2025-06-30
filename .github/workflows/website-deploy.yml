@@ -1,0 +1,27 @@
+name: Deploy DSA with Dart Website
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      
+      - run: git pull origin main
+        working-directory: ./website
+
+      - run: npm install
+        working-directory: ./website
+
+      - run: npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --minify
+        working-directory: ./website
+
+      - run: pm2 restart dsa-with-dart
+        working-directory: ./website
