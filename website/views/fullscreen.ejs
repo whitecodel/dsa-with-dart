@@ -45,6 +45,20 @@
   <div class="header">
     <h1 class="text-2xl font-bold text-primary-700 hidden md:block"><%= title %></h1>
     <div class="flex items-center gap-4">
+      <% if (filePath && filePath.endsWith('.dart')) { %>
+      <button class="copy-code-btn inline-flex items-center p-2 text-gray-500 hover:text-blue-600 focus:outline-none" title="Copy Code">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      </button>
+      <% } %>
+      <% if (filePath && filePath.endsWith('.dart') && gistId) { %>
+      <a href="https://dartpad.dev/?id=<%= gistId %>" target="_blank" class="inline-flex items-center p-2 text-gray-500 hover:text-green-600 focus:outline-none" title="Play in DartPad">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+        </svg>
+      </a>
+      <% } %>
       <a href="/dashboard?path=<%= filePath %>" class="text-primary-600 hover:text-primary-800 font-medium flex items-center back-button">
         <svg class="h-5 w-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
@@ -68,6 +82,41 @@
       document.querySelectorAll('pre code').forEach((el) => {
         hljs.highlightElement(el);
       });
+
+      // Add copy functionality
+      const copyButton = document.querySelector('.copy-code-btn');
+      if (copyButton) {
+        copyButton.addEventListener('click', function() {
+          // Find the code element
+          const codeElement = document.querySelector('pre code');
+          if (codeElement) {
+            // Get the code text
+            const codeText = codeElement.textContent;
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(codeText).then(() => {
+              // Visual feedback
+              const originalSvg = this.innerHTML;
+              this.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              `;
+              this.classList.remove('text-gray-500');
+              this.classList.add('text-green-600');
+
+              // Revert after 2 seconds
+              setTimeout(() => {
+                this.innerHTML = originalSvg;
+                this.classList.remove('text-green-600');
+                this.classList.add('text-gray-500');
+              }, 2000);
+            }).catch(err => {
+              console.error('Could not copy text: ', err);
+            });
+          }
+        });
+      }
     });
   </script>
 </body>
