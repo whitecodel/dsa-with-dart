@@ -99,9 +99,25 @@ async function getDirectoryStructure(directoryPath) {
       }
     }
 
-    // Sort structure with difficulty levels in the correct order
+    // Sort structure with theory content first, then by difficulty levels
     structure.sort((a, b) => {
-      // Define difficulty order
+      // Define content type priorities: theory first, then code examples
+      const isTheoryA =
+        a.name.toLowerCase().includes("theory") ||
+        a.name.toLowerCase().includes("introduction") ||
+        a.name.toLowerCase().includes("concept") ||
+        a.name.toLowerCase().includes("readme");
+      const isTheoryB =
+        b.name.toLowerCase().includes("theory") ||
+        b.name.toLowerCase().includes("introduction") ||
+        b.name.toLowerCase().includes("concept") ||
+        b.name.toLowerCase().includes("readme");
+
+      // If one is theory and the other isn't, prioritize theory
+      if (isTheoryA && !isTheoryB) return -1;
+      if (!isTheoryA && isTheoryB) return 1;
+
+      // Define difficulty order for non-theory content
       const difficultyOrder = { easy: 1, medium: 2, hard: 3 };
 
       // Check if the items have difficulty levels in their names
@@ -255,6 +271,10 @@ app.get("/fullscreen", async (req, res) => {
   const content = fileData.content;
   const gistId = fileData.gistId;
 
+  // Get structure and find prev/next navigation
+  const structure = await getDirectoryStructure("");
+  const prevNext = await findPrevAndNext(structure, filePath);
+
   // Extract filename for the title
   let title = "DSA with Dart";
   if (filePath) {
@@ -267,6 +287,7 @@ app.get("/fullscreen", async (req, res) => {
     filePath,
     title,
     gistId,
+    prevNext,
   });
 });
 
