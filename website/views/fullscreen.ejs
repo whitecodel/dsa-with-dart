@@ -21,14 +21,31 @@
       align-items: center;
       margin-bottom: 20px;
     }
+
+    @media (max-width: 767px) {
+      body {
+        padding: 0px;
+      }
+
+      .back-button {
+        padding: 20px 0px 0px 20px;
+        font-size: 14px;
+      }
+
+      .markdown-content pre {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        border-radius: 0 !important;
+      }
+    }
   </style>
 </head>
 
 <body class="bg-gray-50">
   <div class="header">
-    <h1 class="text-2xl font-bold text-primary-700"><%= title %></h1>
+    <h1 class="text-2xl font-bold text-primary-700 hidden md:block"><%= title %></h1>
     <div class="flex items-center gap-4">
-      <a href="/dashboard?path=<%= filePath %>" class="text-primary-600 hover:text-primary-800 font-medium flex items-center">
+      <a href="/dashboard?path=<%= filePath %>" class="text-primary-600 hover:text-primary-800 font-medium flex items-center back-button">
         <svg class="h-5 w-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
         </svg>
@@ -37,7 +54,7 @@
     </div>
   </div>
 
-  <div class="bg-white rounded-lg shadow-sm p-6">
+  <div class="md:bg-white rounded-lg md:shadow-sm md:p-6">
     <div class="markdown-content">
       <%- content %>
     </div>

@@ -180,15 +180,17 @@ async function getFileContent(filePath) {
     }
 
     if (path.extname(fullPath) === ".md") {
-      return { content: marked.parse(content) };
+      return { content: `<div class="p-4">${marked.parse(content)}</div>` };
     }
 
-    return { content: `<pre><code>${content}</code></pre>` };
+    return {
+      content: `<pre><code class="p-4">${content}</code></pre>`,
+    };
   } catch (err) {
     console.error(`Error reading file ${filePath}:`, err);
     return {
       content:
-        '<div class="text-red-500">Error: Could not load file content</div>',
+        '<div class="text-red-500 p-4">Error: Could not load file content</div>',
       gistId: null,
     };
   }
