@@ -3,16 +3,65 @@ const fs = require("fs").promises;
 const path = require("path");
 const { marked } = require("marked");
 const hljs = require("highlight.js");
+const mongoose = require("mongoose");
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+const passport = require("passport");
+const dotenv = require("dotenv");
+
+// Load environment variables
+dotenv.config();
+
+// Load passport config
+require("./config/passport");
 
 const app = express();
 const PORT = process.env.PORT || 7676;
+
+// MongoDB Connection
+const MONGO_URI =
+  process.env.MONGO_URI || "mongodb://localhost:27017/dsa-with-dart";
+mongoose
+  .connect(MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+    process.exit(1);
+  });
 
 // Set view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+// Session middleware
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "keyboard cat",
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: MONGO_URI }),
+    cookie: {
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 24 * 60 * 60 * 1000, // 1 day
+    },
+  })
+);
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Set global user variable for templates
+app.use((req, res, next) => {
+  res.locals.user = req.user || null;
+  next();
+});
+
 // Serve static files
 app.use(express.static(path.join(__dirname, "public")));
+
+// Import route files
+const authRoutes = require("./routes/auth");
 
 // Configure marked for markdown rendering with syntax highlighting
 marked.setOptions({
@@ -24,6 +73,12 @@ marked.setOptions({
   },
   breaks: true,
 });
+
+// Use route files
+app.use("/auth", authRoutes);
+
+// Import auth middleware
+const { ensureAuth } = require("./middleware/auth");
 
 // Route for homepage
 app.get("/", (req, res) => {
@@ -237,8 +292,8 @@ async function findPrevAndNext(structure, currentPath) {
   };
 }
 
-// Dashboard route
-app.get("/dashboard", async (req, res) => {
+// Dashboard route - protected with authentication
+app.get("/dashboard", ensureAuth, async (req, res) => {
   const structure = await getDirectoryStructure("");
   const selectedPath = req.query.path || "";
   let content = "";
@@ -264,8 +319,8 @@ app.get("/dashboard", async (req, res) => {
   });
 });
 
-// Full screen content route
-app.get("/fullscreen", async (req, res) => {
+// Full screen content route - protected with authentication
+app.get("/fullscreen", ensureAuth, async (req, res) => {
   const filePath = req.query.path || "README.md";
   const fileData = await getFileContent(filePath);
   const content = fileData.content;
@@ -291,8 +346,8 @@ app.get("/fullscreen", async (req, res) => {
   });
 });
 
-// API route for dynamically loading file content
-app.get("/api/file-content", async (req, res) => {
+// API route for dynamically loading file content - protected with authentication
+app.get("/api/file-content", ensureAuth, async (req, res) => {
   try {
     const structure = await getDirectoryStructure("");
     const selectedPath = req.query.path || "";

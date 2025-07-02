@@ -43,7 +43,12 @@
         </div>
         <div class="hidden md:flex space-x-2">
           <a href="https://github.com/whitecodel/dsa-with-dart" target="_blank" class="navbar-item">GitHub</a>
+          <% if (user) { %>
           <a href="/dashboard" class="navbar-item">Dashboard</a>
+          <a href="#" class="navbar-item" onclick="showLogoutConfirmation(event)">Logout</a>
+          <% } else { %>
+          <a href="/auth/github" class="navbar-item">Login</a>
+          <% } %>
         </div>
         <!-- Mobile menu button -->
         <div class="md:hidden">
@@ -57,7 +62,12 @@
       <!-- Mobile menu -->
       <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
         <a href="https://github.com/whitecodel/dsa-with-dart" target="_blank" class="block navbar-item">GitHub</a>
+        <% if (user) { %>
         <a href="/dashboard" class="block navbar-item">Dashboard</a>
+        <a href="#" class="block navbar-item" onclick="showLogoutConfirmation(event)">Logout</a>
+        <% } else { %>
+        <a href="/auth/github" class="block navbar-item">Login</a>
+        <% } %>
       </div>
     </nav>
     <!-- Hero content -->
@@ -73,11 +83,11 @@
             </svg>
             Open Source
           </a>
-          <a href="/dashboard" class="bg-primary-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-primary-700 transition duration-300 flex items-center justify-center">
+          <a href="<%= user ? '/dashboard' : '/auth/github' %>" class="bg-primary-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:bg-primary-700 transition duration-300 flex items-center justify-center">
             <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
-            Get Started for Free
+            <%= user ? 'Go to Dashboard' : 'Get Started for Free' %>
           </a>
         </div>
 
@@ -121,6 +131,22 @@ print("😄 Now I'm the one asking the questions.");
     </footer>
   </div>
 
+  <!-- Logout Confirmation Modal -->
+  <div id="logout-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-lg p-6 max-w-sm mx-4 shadow-xl">
+      <h3 class="text-lg font-medium text-gray-900 mb-4">Confirm Logout</h3>
+      <p class="text-gray-600 mb-6">Are you sure you want to log out?</p>
+      <div class="flex justify-end space-x-3">
+        <button onclick="hideLogoutConfirmation()" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition duration-200">
+          Cancel
+        </button>
+        <a href="/auth/logout" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition duration-200">
+          Logout
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Mobile menu toggle
     document.getElementById('menu-toggle').addEventListener('click', function() {
@@ -132,6 +158,30 @@ print("😄 Now I'm the one asking the questions.");
       document.querySelectorAll('pre code').forEach((el) => {
         hljs.highlightElement(el);
       });
+    });
+
+    // Logout confirmation functions
+    function showLogoutConfirmation(event) {
+      event.preventDefault();
+      document.getElementById('logout-modal').classList.remove('hidden');
+    }
+
+    function hideLogoutConfirmation() {
+      document.getElementById('logout-modal').classList.add('hidden');
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('logout-modal').addEventListener('click', function(event) {
+      if (event.target === this) {
+        hideLogoutConfirmation();
+      }
+    });
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && !document.getElementById('logout-modal').classList.contains('hidden')) {
+        hideLogoutConfirmation();
+      }
     });
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>

@@ -81,10 +81,21 @@
             </svg>
             GitHub
           </a>
-          <div class="text-sm font-medium text-primary-100 px-4 py-2">
+          <div class="text-sm font-medium text-primary-100 px-4 py-2 hidden md:block">
             Make a pull request if you want to add more
           </div>
-          <div class="relative mt-3 sm:mt-0">
+          <div class="">
+            <% if (user) { %>
+            <div class="flex items-center">
+              <img src="<%= user.avatar %>" alt="User Avatar" class="w-8 h-8 rounded-full mr-2">
+              <div class="text-sm font-medium">
+                <%= user.username %>
+                <a href="#" class="ml-3 text-primary-200 hover:text-white" onclick="showLogoutConfirmation(event)">Logout</a>
+              </div>
+            </div>
+            <% } %>
+          </div>
+          <div class="relative mt-3 sm:mt-0 ml-4">
             <input id="search-input" type="text" placeholder="Search..." class="bg-primary-800 text-white placeholder-primary-300 rounded-md py-1 px-3 focus:outline-none focus:ring-2 focus:ring-primary-400 w-full sm:w-auto">
             <div id="search-results" class="absolute left-0 right-0 bg-white mt-1 rounded-md shadow-lg z-10 max-h-96 overflow-y-auto hidden"></div>
           </div>
@@ -242,6 +253,22 @@
     </div>
     </div>
   </footer>
+
+  <!-- Logout Confirmation Modal -->
+  <div id="logout-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white rounded-lg p-6 max-w-sm mx-4 shadow-xl">
+      <h3 class="text-lg font-medium text-gray-900 mb-4">Confirm Logout</h3>
+      <p class="text-gray-600 mb-6">Are you sure you want to log out?</p>
+      <div class="flex justify-end space-x-3">
+        <button onclick="hideLogoutConfirmation()" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition duration-200">
+          Cancel
+        </button>
+        <a href="/auth/logout" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition duration-200">
+          Logout
+        </a>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/dart.min.js"></script>
@@ -669,6 +696,30 @@
       document.addEventListener('click', (e) => {
         if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
           searchResults.classList.add('hidden');
+        }
+      });
+
+      // Logout confirmation functions
+      window.showLogoutConfirmation = function(event) {
+        event.preventDefault();
+        document.getElementById('logout-modal').classList.remove('hidden');
+      }
+
+      window.hideLogoutConfirmation = function() {
+        document.getElementById('logout-modal').classList.add('hidden');
+      }
+
+      // Close modal when clicking outside
+      document.getElementById('logout-modal').addEventListener('click', function(event) {
+        if (event.target === this) {
+          hideLogoutConfirmation();
+        }
+      });
+
+      // Close modal on escape key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && !document.getElementById('logout-modal').classList.contains('hidden')) {
+          hideLogoutConfirmation();
         }
       });
     });
