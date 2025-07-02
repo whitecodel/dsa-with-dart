@@ -75,6 +75,10 @@
   @apply text-gray-600 hover:bg-gray-100;
 }
 
+.logo {
+  @apply h-10 border rounded-md border-blue-300;
+}
+
 /* Animation for loading */
 @keyframes pulse {
   0%, 100% {
