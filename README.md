@@ -6,7 +6,7 @@ This repository is a comprehensive collection of data structures and algorithms 
 
 ## Live Website
 
-You can view the live website for this repository at [dsa-with-dart](https://daswithdart.whitecodel.com/). The website provides an interactive way to explore the algorithm patterns, their theory, and the associated problems.
+You can view the live website for this repository at [dsa-with-dart](https://dsawithdart.whitecodel.com/). The website provides an interactive way to explore the algorithm patterns, their theory, and the associated problems.
 
 ## Project Structure
 
