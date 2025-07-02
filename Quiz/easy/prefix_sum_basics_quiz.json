@@ -1,0 +1,13 @@
+{
+    "title": "Range Sum Query",
+    "type": "multiple-choice",
+    "timeLimit": 2,
+    "question": "What is the key advantage of using a prefix sum array for range queries?",
+    "options": [
+        "O(1) time complexity for each range sum query",
+        "O(n) time complexity for each range sum query",
+        "Reduced space complexity compared to storing the original array",
+        "Better cache performance for small arrays"
+    ],
+    "correctAnswer": 0
+}

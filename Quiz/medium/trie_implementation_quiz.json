@@ -1,0 +1,13 @@
+{
+    "title": "Trie Implementation",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "What key feature must be included in each TrieNode to determine if a valid word ends at that node?",
+    "options": [
+        "A boolean flag (isEndOfWord) to mark the end of a complete word",
+        "A pointer to the next character in the sequence",
+        "A count of how many words pass through this node",
+        "A reference to the root node"
+    ],
+    "correctAnswer": 0
+}

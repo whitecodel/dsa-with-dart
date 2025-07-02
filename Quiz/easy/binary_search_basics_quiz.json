@@ -1,0 +1,13 @@
+{
+    "title": "Binary Search Basics",
+    "type": "multiple-choice",
+    "timeLimit": 2,
+    "question": "What is the correct way to calculate the middle index in binary search to prevent integer overflow?",
+    "options": [
+        "mid = left + (right - left) ~/ 2",
+        "mid = (left + right) ~/ 2",
+        "mid = (left + right) / 2",
+        "mid = (right - left) ~/ 2"
+    ],
+    "correctAnswer": 0
+}

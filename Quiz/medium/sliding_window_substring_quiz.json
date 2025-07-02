@@ -1,0 +1,13 @@
+{
+    "title": "Dynamic-Size Sliding Window",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "In the 'Longest Substring with K Distinct Characters' problem, what data structure is essential for tracking the current window state?",
+    "options": [
+        "Hash map to count character frequencies",
+        "Array to store the window contents",
+        "Queue to process characters in order",
+        "Stack to track the most recently seen characters"
+    ],
+    "correctAnswer": 0
+}

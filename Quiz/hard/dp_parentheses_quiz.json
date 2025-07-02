@@ -1,0 +1,13 @@
+{
+    "title": "Advanced DP Techniques",
+    "type": "multiple-choice",
+    "timeLimit": 5,
+    "question": "In the longest valid parentheses problem, what is the key insight for the DP solution?",
+    "options": [
+        "Only update the DP array when encountering a closing parenthesis ')'",
+        "Use a stack to keep track of indices",
+        "Calculate the maximum length by considering previously matched substrings",
+        "All of the above"
+    ],
+    "correctAnswer": 3
+}

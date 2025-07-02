@@ -1,0 +1,13 @@
+{
+    "title": "Word Ladder BFS",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "Why is BFS preferred over DFS for solving the Word Ladder problem?",
+    "options": [
+        "BFS guarantees the shortest path in an unweighted graph",
+        "DFS uses more memory for this specific problem",
+        "BFS is generally faster for all graph problems",
+        "Word Ladder requires level-by-level processing"
+    ],
+    "correctAnswer": 0
+}

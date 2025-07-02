@@ -1,0 +1,13 @@
+{
+    "title": "Fixed-Size Sliding Window",
+    "type": "multiple-choice",
+    "timeLimit": 2,
+    "question": "What is the time complexity of finding the maximum sum subarray of size k using the sliding window technique?",
+    "options": [
+        "O(n) where n is the array length",
+        "O(n*k) where n is the array length and k is the window size",
+        "O(n²) where n is the array length",
+        "O(k) where k is the window size"
+    ],
+    "correctAnswer": 0
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Trie Basics",
+    "type": "multiple-choice",
+    "timeLimit": 2,
+    "question": "What is the primary advantage of using a Trie data structure?",
+    "options": [
+        "Efficient prefix matching and lookups",
+        "Constant time insertion and deletion",
+        "Lower memory usage than hash tables",
+        "Support for non-string data types"
+    ],
+    "correctAnswer": 0
+}

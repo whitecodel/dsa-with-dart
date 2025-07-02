@@ -1,0 +1,13 @@
+{
+    "title": "Union Find Optimizations",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "What is the purpose of 'path compression' in a Union Find data structure?",
+    "options": [
+        "To flatten the tree structure for faster subsequent find operations",
+        "To reduce the memory usage of the data structure",
+        "To guarantee that all operations run in constant time",
+        "To ensure sets remain balanced after union operations"
+    ],
+    "correctAnswer": 0
+}

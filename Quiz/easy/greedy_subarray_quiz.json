@@ -1,0 +1,13 @@
+{
+    "title": "Maximum Subarray (Kadane's Algorithm)",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "In Kadane's algorithm for finding the maximum subarray sum, what is the key greedy choice made at each step?",
+    "options": [
+        "Whether to start a new subarray or extend the current subarray",
+        "Always include the current element in the subarray",
+        "Always start a new subarray when encountering a negative number",
+        "Skip all negative numbers in the array"
+    ],
+    "correctAnswer": 0
+}

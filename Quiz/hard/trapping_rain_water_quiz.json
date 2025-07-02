@@ -1,0 +1,13 @@
+{
+    "title": "Trapping Rain Water",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "In the Two Pointers approach for the 'Trapping Rain Water' problem, how do we determine which pointer (left or right) to move in each step?",
+    "options": [
+        "Move the pointer with the smaller height value",
+        "Always alternate between left and right pointers",
+        "Move the pointer that would result in more water being trapped",
+        "Move both pointers simultaneously"
+    ],
+    "correctAnswer": 0
+}

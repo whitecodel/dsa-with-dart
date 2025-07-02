@@ -1,0 +1,13 @@
+{
+    "title": "Course Schedule III Greedy Approach",
+    "type": "multiple-choice",
+    "timeLimit": 5,
+    "question": "In the Course Schedule III problem, what is the optimal greedy strategy?",
+    "options": [
+        "Sort courses by deadline, and replace longer courses with shorter ones when needed",
+        "Always choose the courses with the shortest duration first",
+        "Sort courses by duration, and always pick the shortest course available",
+        "Choose courses in the order they're given in the input"
+    ],
+    "correctAnswer": 0
+}

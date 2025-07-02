@@ -1,0 +1,13 @@
+{
+    "title": "N-Queens Backtracking",
+    "type": "multiple-choice",
+    "timeLimit": 5,
+    "question": "In the optimized solution for the N-Queens problem, which of the following data structures are used to efficiently track conflicts?",
+    "options": [
+        "Sets to track columns and diagonals",
+        "2D matrix to represent the board",
+        "Priority queue to rank positions",
+        "Binary search tree for position lookup"
+    ],
+    "correctAnswer": 0
+}

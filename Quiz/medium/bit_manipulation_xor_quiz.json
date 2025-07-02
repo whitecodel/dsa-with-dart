@@ -1,0 +1,13 @@
+{
+    "title": "Bit Manipulation XOR",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "Which property of XOR operations makes it useful for finding a single non-duplicated number in an array?",
+    "options": [
+        "XOR of a number with itself is 0 (a ^ a = 0)",
+        "XOR is commutative (a ^ b = b ^ a)",
+        "XOR of a number with 0 is the number itself (a ^ 0 = a)",
+        "All of the above"
+    ],
+    "correctAnswer": 3
+}

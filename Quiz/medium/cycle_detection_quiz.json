@@ -1,0 +1,13 @@
+{
+    "title": "Course Schedule Cycle Detection",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "How do we determine if it's impossible to finish all courses in the 'Course Schedule' problem?",
+    "options": [
+        "If a cycle exists in the course dependency graph",
+        "If there are more courses than prerequisites",
+        "If any course has more than three prerequisites",
+        "If the graph is not fully connected"
+    ],
+    "correctAnswer": 0
+}

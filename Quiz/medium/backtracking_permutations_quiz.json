@@ -1,0 +1,13 @@
+{
+    "title": "Backtracking Permutations",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "In the permutations backtracking problem, which data structure is typically used to track elements that have already been included in the current permutation?",
+    "options": [
+        "Boolean array/list",
+        "Hash table (Map)",
+        "Queue",
+        "Stack"
+    ],
+    "correctAnswer": 0
+}

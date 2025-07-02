@@ -1,0 +1,13 @@
+{
+    "title": "Median of Two Sorted Arrays",
+    "type": "multiple-choice",
+    "timeLimit": 5,
+    "question": "Why do we ensure the first array is smaller than or equal to the second array in the median of two sorted arrays problem?",
+    "options": [
+        "To minimize the number of binary search iterations",
+        "To ensure the partitioning calculation is valid",
+        "To simplify the boundary condition checks",
+        "All of the above"
+    ],
+    "correctAnswer": 3
+}

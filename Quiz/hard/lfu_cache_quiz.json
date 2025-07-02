@@ -1,13 +1,13 @@
 {
-    "title": "LFU Cache Implementation",
+    "title": "LFU Cache",
     "type": "multiple-choice",
     "timeLimit": 5,
-    "question": "In an LFU (Least Frequently Used) Cache implementation, what happens when there's a tie in frequency?",
+    "question": "In an LFU Cache implementation, what data structures are needed to achieve O(1) time complexity for all operations?",
     "options": [
-        "The least recently used item is evicted",
-        "The most recently used item is evicted",
-        "A random item with the same frequency is evicted",
-        "The item with the smallest key is evicted"
+        "Two hash maps and a doubly linked list for each frequency",
+        "A single hash map and a priority queue",
+        "Three hash maps and a binary search tree",
+        "A hash map and an array for each frequency"
     ],
     "correctAnswer": 0
 }

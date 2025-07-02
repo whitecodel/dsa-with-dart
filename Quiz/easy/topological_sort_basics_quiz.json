@@ -1,0 +1,13 @@
+{
+    "title": "Course Order Basics",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "In the 'Course Schedule II' problem, what data structure is essential to track during topological sort?",
+    "options": [
+        "Visited status for each course (unvisited, visiting, visited)",
+        "A min-heap of all courses",
+        "A doubly-linked list for each course",
+        "A balanced binary tree"
+    ],
+    "correctAnswer": 0
+}

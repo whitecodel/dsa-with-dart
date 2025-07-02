@@ -1,0 +1,13 @@
+{
+    "title": "Bit Manipulation Basics",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "In the counting bits problem, which operation efficiently removes the rightmost set bit of an integer i?",
+    "options": [
+        "i & (i - 1)",
+        "i | (i - 1)",
+        "i ^ (i - 1)",
+        "i >> 1"
+    ],
+    "correctAnswer": 0
+}

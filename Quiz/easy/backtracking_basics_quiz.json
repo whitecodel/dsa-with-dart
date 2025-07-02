@@ -1,0 +1,13 @@
+{
+    "title": "Backtracking Basics",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "In the letter combinations of a phone number problem, what is the time complexity?",
+    "options": [
+        "O(4^n) where n is the number of digits",
+        "O(n) where n is the number of digits",
+        "O(n^2) where n is the number of digits",
+        "O(n!) where n is the number of digits"
+    ],
+    "correctAnswer": 0
+}

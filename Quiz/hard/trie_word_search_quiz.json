@@ -1,0 +1,13 @@
+{
+    "title": "Trie Word Search",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "In a word search problem using a Trie, why is it more efficient to build a Trie from the dictionary words rather than searching for each word individually?",
+    "options": [
+        "The Trie allows early termination of searches for invalid prefixes",
+        "The Trie takes less memory than storing individual words",
+        "The Trie enables O(1) search time for any word",
+        "The Trie automatically sorts the dictionary words"
+    ],
+    "correctAnswer": 0
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Valid Anagram Hash Map",
+    "type": "multiple-choice",
+    "timeLimit": 2,
+    "question": "Which hash map operation is most important when checking if two strings are anagrams?",
+    "options": [
+        "Tracking character frequencies in both strings",
+        "Sorting both strings alphabetically",
+        "Converting strings to arrays",
+        "Using binary search"
+    ],
+    "correctAnswer": 0
+}

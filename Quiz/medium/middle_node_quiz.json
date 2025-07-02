@@ -1,0 +1,13 @@
+{
+    "title": "Finding Middle Node",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "For finding the middle node of a linked list using fast and slow pointers, what is the correct termination condition?",
+    "options": [
+        "When fast pointer reaches null or fast.next is null",
+        "When slow pointer reaches the end of the list",
+        "When both pointers meet each other",
+        "When slow pointer has moved exactly n/2 steps"
+    ],
+    "correctAnswer": 0
+}

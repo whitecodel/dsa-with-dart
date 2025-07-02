@@ -1,0 +1,13 @@
+{
+    "title": "Two Pointers Technique",
+    "type": "multiple-choice",
+    "timeLimit": 2,
+    "question": "When solving the 'Two Sum' problem on a sorted array, why is the two-pointer approach more efficient than using nested loops?",
+    "options": [
+        "It reduces the time complexity from O(n²) to O(n)",
+        "It allows for finding all possible pairs, not just one",
+        "It works on unsorted arrays as well",
+        "It uses less memory than the hash map approach"
+    ],
+    "correctAnswer": 0
+}

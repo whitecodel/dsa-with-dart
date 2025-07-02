@@ -1,0 +1,13 @@
+{
+    "title": "Three Sum Problem",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "Why is sorting the array first essential to solving the 3Sum problem with Two Pointers?",
+    "options": [
+        "It allows efficient two-pointer traversal and helps avoid duplicate triplets",
+        "It reduces the problem to a simpler one-pointer approach",
+        "It makes the time complexity O(n) instead of O(n²)",
+        "It ensures the triplets in the result are in ascending order"
+    ],
+    "correctAnswer": 0
+}

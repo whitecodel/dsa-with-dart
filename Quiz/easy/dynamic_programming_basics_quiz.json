@@ -1,0 +1,13 @@
+{
+    "title": "Dynamic Programming Basics",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "What is the time complexity of calculating the nth Fibonacci number using dynamic programming?",
+    "options": [
+        "O(n)",
+        "O(2^n)",
+        "O(n^2)",
+        "O(log n)"
+    ],
+    "correctAnswer": 0
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Dynamic Union Find Applications",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "In the 'Number of Islands II' problem where land cells are added dynamically, why is Union Find more suitable than a DFS/BFS approach?",
+    "options": [
+        "Union Find efficiently handles incremental changes to the grid and tracks connected components",
+        "Union Find requires less memory than running DFS/BFS after each new land cell",
+        "Union Find guarantees O(1) time complexity for each new land cell",
+        "DFS/BFS cannot identify islands in a grid structure"
+    ],
+    "correctAnswer": 0
+}

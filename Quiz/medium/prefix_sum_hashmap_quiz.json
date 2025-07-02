@@ -1,0 +1,13 @@
+{
+    "title": "Subarray Sum Equals K",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "In the 'Subarray Sum Equals K' problem, why do we use a hash map along with prefix sum?",
+    "options": [
+        "To efficiently find previous prefix sums that differ from the current sum by exactly k",
+        "To store the original array elements in sorted order",
+        "To count unique elements in the array",
+        "To reduce the space complexity of the solution"
+    ],
+    "correctAnswer": 0
+}

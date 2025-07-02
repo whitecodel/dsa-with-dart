@@ -1,0 +1,13 @@
+{
+    "title": "Advanced Bit Manipulation",
+    "type": "multiple-choice",
+    "timeLimit": 5,
+    "question": "Which data structure is commonly used to efficiently find the maximum XOR of two numbers in an array?",
+    "options": [
+        "Trie (prefix tree) with bit representation",
+        "Binary heap",
+        "Hash table",
+        "Segment tree"
+    ],
+    "correctAnswer": 0
+}

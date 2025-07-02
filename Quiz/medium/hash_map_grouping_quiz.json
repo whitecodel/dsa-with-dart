@@ -1,0 +1,13 @@
+{
+    "title": "Group Anagrams",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "What is the most efficient key to use when grouping anagrams together in a hash map?",
+    "options": [
+        "A sorted version of each string",
+        "The length of each string",
+        "The first character of each string",
+        "A unique ID assigned to each string"
+    ],
+    "correctAnswer": 0
+}

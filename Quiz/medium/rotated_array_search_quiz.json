@@ -1,0 +1,13 @@
+{
+    "title": "Search in Rotated Sorted Array",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "In a rotated sorted array like [4,5,6,7,0,1,2], how do you determine which half to search for a target?",
+    "options": [
+        "Check which half is sorted and determine if the target is in that range",
+        "Always search the left half first",
+        "Compare the target with the middle element and choose either left or right",
+        "Find the pivot point first, then do regular binary search"
+    ],
+    "correctAnswer": 0
+}

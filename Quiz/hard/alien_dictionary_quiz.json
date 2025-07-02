@@ -1,0 +1,13 @@
+{
+    "title": "Alien Dictionary",
+    "type": "multiple-choice",
+    "timeLimit": 5,
+    "question": "In the Alien Dictionary problem, how do we determine the relationship between two letters?",
+    "options": [
+        "By finding the first different character between adjacent words",
+        "By counting the frequency of each letter in the dictionary",
+        "By analyzing the length of each word",
+        "By checking if letters appear in alphabetical order"
+    ],
+    "correctAnswer": 0
+}

@@ -1,0 +1,13 @@
+{
+    "title": "Minimum Window Substring",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "What condition determines when we can start shrinking the window in the 'Minimum Window Substring' problem?",
+    "options": [
+        "When the current window contains all required characters in the right frequencies",
+        "When the window size exceeds the length of the target string",
+        "When we encounter a duplicate character in the window",
+        "When the window contains at least one of each required character"
+    ],
+    "correctAnswer": 0
+}

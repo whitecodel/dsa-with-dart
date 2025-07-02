@@ -1,0 +1,13 @@
+{
+    "title": "Tree Traversal Basics",
+    "type": "multiple-choice",
+    "timeLimit": 2,
+    "question": "Which data structure is typically used for implementing level order traversal of a binary tree?",
+    "options": [
+        "Queue",
+        "Stack",
+        "Heap",
+        "Hash Table"
+    ],
+    "correctAnswer": 0
+}

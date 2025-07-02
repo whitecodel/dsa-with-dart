@@ -1,0 +1,13 @@
+{
+    "title": "Advanced Cycle Detection",
+    "type": "multiple-choice",
+    "timeLimit": 5,
+    "question": "In Floyd's Tortoise and Hare algorithm for finding the duplicate number, why do we reset the slow pointer to the start after finding the intersection point?",
+    "options": [
+        "To find the entrance to the cycle, which is the duplicate number",
+        "To verify that a cycle actually exists",
+        "To calculate the length of the cycle",
+        "To find the smallest element in the cycle"
+    ],
+    "correctAnswer": 0
+}

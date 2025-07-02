@@ -1,0 +1,13 @@
+{
+    "title": "Jump Game Greedy Approach",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "In the Jump Game problem, what does the greedy algorithm keep track of to determine if the end can be reached?",
+    "options": [
+        "The maximum index that can be reached from any position so far",
+        "The minimum number of jumps required to reach each position",
+        "All possible paths to the end of the array",
+        "The index of the largest jump value in the array"
+    ],
+    "correctAnswer": 0
+}

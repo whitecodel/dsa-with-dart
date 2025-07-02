@@ -1,0 +1,13 @@
+{
+    "title": "Coin Change DP",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "In the coin change problem using bottom-up DP, what does dp[i] represent?",
+    "options": [
+        "The minimum number of coins needed to make amount i",
+        "The total number of ways to make amount i",
+        "The maximum value achievable with amount i",
+        "The number of different coin denominations needed for amount i"
+    ],
+    "correctAnswer": 0
+}

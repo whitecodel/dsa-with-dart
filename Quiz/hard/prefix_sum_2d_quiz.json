@@ -1,0 +1,13 @@
+{
+    "title": "Maximum Submatrix Sum",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "How do we optimize the solution for finding the maximum sum submatrix in a 2D array?",
+    "options": [
+        "By combining 2D prefix sums with Kadane's algorithm",
+        "By using a greedy approach that always selects the largest elements",
+        "By converting the 2D problem into multiple 1D problems",
+        "By using a priority queue to track the largest subarrays"
+    ],
+    "correctAnswer": 2
+}

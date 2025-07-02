@@ -1,0 +1,13 @@
+{
+    "title": "Union Find Basics",
+    "type": "multiple-choice",
+    "timeLimit": 2,
+    "question": "What is the primary purpose of the 'find' operation in a Union Find data structure?",
+    "options": [
+        "To return the representative (root) of the set containing an element",
+        "To create a new set with a single element",
+        "To combine two separate sets into one",
+        "To check if the data structure contains a specific element"
+    ],
+    "correctAnswer": 0
+}
