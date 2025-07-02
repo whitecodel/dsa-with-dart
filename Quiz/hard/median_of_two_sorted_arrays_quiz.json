@@ -1,0 +1,13 @@
+{
+    "title": "Median of Two Sorted Arrays",
+    "type": "multiple-choice",
+    "timeLimit": 5,
+    "question": "What's the required time complexity for finding the median of two sorted arrays?",
+    "options": [
+        "O(log(min(m,n)))",
+        "O(m+n)",
+        "O(log(m+n))",
+        "O(m*n)"
+    ],
+    "correctAnswer": 0
+}

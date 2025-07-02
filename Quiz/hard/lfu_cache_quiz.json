@@ -1,0 +1,13 @@
+{
+    "title": "LFU Cache Implementation",
+    "type": "multiple-choice",
+    "timeLimit": 5,
+    "question": "In an LFU (Least Frequently Used) Cache implementation, what happens when there's a tie in frequency?",
+    "options": [
+        "The least recently used item is evicted",
+        "The most recently used item is evicted",
+        "A random item with the same frequency is evicted",
+        "The item with the smallest key is evicted"
+    ],
+    "correctAnswer": 0
+}

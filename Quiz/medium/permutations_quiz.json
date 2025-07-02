@@ -1,0 +1,13 @@
+{
+    "title": "Permutations Backtracking",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "For generating all permutations of n distinct integers, what is the time complexity?",
+    "options": [
+        "O(n!)",
+        "O(2^n)",
+        "O(n * n!)",
+        "O(n^2)"
+    ],
+    "correctAnswer": 2
+}

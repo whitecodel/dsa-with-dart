@@ -1,0 +1,13 @@
+{
+    "title": "Binary Search Basics",
+    "type": "multiple-choice",
+    "timeLimit": 2,
+    "question": "What is the time complexity of binary search algorithm?",
+    "options": [
+        "O(log n)",
+        "O(n)",
+        "O(n log n)",
+        "O(1)"
+    ],
+    "correctAnswer": 0
+}

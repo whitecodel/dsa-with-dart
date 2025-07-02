@@ -1,0 +1,13 @@
+{
+    "title": "Number of Islands",
+    "type": "multiple-choice",
+    "timeLimit": 3,
+    "question": "Which algorithm is most commonly used to count the number of islands in a grid?",
+    "options": [
+        "Depth-First Search (DFS)",
+        "Binary Search",
+        "Quicksort",
+        "Heap Sort"
+    ],
+    "correctAnswer": 0
+}

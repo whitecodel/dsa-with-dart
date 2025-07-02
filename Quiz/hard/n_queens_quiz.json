@@ -1,0 +1,13 @@
+{
+    "title": "N-Queens Problem",
+    "type": "multiple-choice",
+    "timeLimit": 5,
+    "question": "Which algorithmic technique is used to solve the N-Queens problem?",
+    "options": [
+        "Backtracking",
+        "Dynamic Programming",
+        "Greedy Algorithm",
+        "Divide and Conquer"
+    ],
+    "correctAnswer": 0
+}

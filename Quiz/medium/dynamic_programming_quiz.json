@@ -1,0 +1,13 @@
+{
+    "title": "Coin Change Problem",
+    "type": "multiple-choice",
+    "timeLimit": 4,
+    "question": "In the coin change problem, what does dp[i] typically represent?",
+    "options": [
+        "The minimum number of coins needed to make amount i",
+        "The total number of ways to make amount i",
+        "The value of the ith coin",
+        "Whether amount i can be made with the given coins"
+    ],
+    "correctAnswer": 0
+}

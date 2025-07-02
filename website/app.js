@@ -8,6 +8,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const passport = require("passport");
 const dotenv = require("dotenv");
+const bodyParser = require("body-parser"); // Add this line
 
 // Load environment variables
 dotenv.config();
@@ -32,6 +33,10 @@ mongoose
 // Set view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
+// Add body parser middleware for JSON
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Session middleware
 app.use(
@@ -62,6 +67,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Import route files
 const authRoutes = require("./routes/auth");
+const quizRoutes = require("./routes/quiz"); // Add this line
 
 // Configure marked for markdown rendering with syntax highlighting
 marked.setOptions({
@@ -76,6 +82,7 @@ marked.setOptions({
 
 // Use route files
 app.use("/auth", authRoutes);
+app.use("/quiz", quizRoutes); // Add this line
 
 // Import auth middleware
 const { ensureAuth } = require("./middleware/auth");
@@ -370,6 +377,13 @@ app.get("/api/file-content", ensureAuth, async (req, res) => {
     console.error("Error serving API content:", error);
     res.status(500).json({ error: "Failed to load content" });
   }
+});
+
+// Quiz page route - protected with authentication
+app.get("/quiz", ensureAuth, (req, res) => {
+  res.render("quiz", {
+    title: "DSA Quiz",
+  });
 });
 
 app.listen(PORT, () => {

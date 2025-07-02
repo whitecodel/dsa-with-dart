@@ -1,0 +1,13 @@
+{
+    "title": "Valid Anagram",
+    "type": "multiple-choice",
+    "timeLimit": 2,
+    "question": "Which data structure is most efficient for checking if two strings are anagrams?",
+    "options": [
+        "Hash Map (frequency counter)",
+        "Stack",
+        "Queue",
+        "Linked List"
+    ],
+    "correctAnswer": 0
+}
