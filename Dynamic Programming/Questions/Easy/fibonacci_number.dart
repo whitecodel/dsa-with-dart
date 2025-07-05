@@ -244,20 +244,20 @@ void main() {
   Stopwatch watch = Stopwatch()..start();
   int result = fibTopDown(n);
   watch.stop();
-  print('\nTop-Down DP: F($n) = $result, Time: ${watch.elapsedMicroseconds}ms');
+  print('\nTop-Down DP: F($n) = $result, Time: ${watch.elapsedMicroseconds}µs');
 
   // Bottom-Up DP (tabulation)
   watch = Stopwatch()..start();
   result = fibBottomUp(n);
   watch.stop();
-  print('Bottom-Up DP: F($n) = $result, Time: ${watch.elapsedMicroseconds}ms');
+  print('Bottom-Up DP: F($n) = $result, Time: ${watch.elapsedMicroseconds}µs');
 
   // Space-Optimized DP
   watch = Stopwatch()..start();
   result = fibOptimized(n);
   watch.stop();
   print(
-    'Space-Optimized: F($n) = $result, Time: ${watch.elapsedMicroseconds}ms',
+    'Space-Optimized: F($n) = $result, Time: ${watch.elapsedMicroseconds}µs',
   );
 
   // The naive recursive approach would take too long for n=30, so skipping it
